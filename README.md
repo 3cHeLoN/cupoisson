@@ -1,4 +1,4 @@
-CuPoisson? - README
+<h1>test</h1>
 1. Running the program
 A simple driver file main.c has been provided to show how you can use cupoisson in your own C code. Currently the code is not provided as a library, since the codebase is quiet small. If a library is preferred, please contact the developer (see frontpage on google code: https://code.google.com/p/cupoisson/).
 
