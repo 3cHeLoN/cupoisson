@@ -10,7 +10,7 @@ to execute the sample file.
 
 The solution is stored as a binary (or text) file. To make a contour plot, a matlab m-file plotSolutionSingle.m has been provided (or plotSolutionDouble.m if you are using double precision).
 
-1.1 Compiling
+<h3>1.1 Compiling</h3>
 Go to the build folder:
 
 $ cd build
@@ -27,7 +27,7 @@ For cleaning up object files, run
 
 $ make clean
 
-1.2 Using double precision
+<h3>1.2 Using double precision</h3>
 Default, the Poisson solver is compiled in single precision format. On the GPU, the highest performance is gained when using single precision computations. If this is not accurate enough for your application, the program has to be compiled to support double precision. Please follow these steps exactly:
 
 Edit precision.h and uncomment the line:
@@ -45,7 +45,7 @@ Note that a performance penalty of approximately a factor 2 is payed by using do
 
 To compile again for single precision accuracy, revert all steps 1-3.
 
-1.3 Trouble shooting
+<h3>1.3 Trouble shooting</h3>
 If compilation fails, make sure that:
 
 CUDA is installed
@@ -54,18 +54,18 @@ Check the include directory in CFLAGS of the makefile
 <h2>2. Source code contents</h2>
 I will give a short description of the contents of the source code.
 
-2.1 main.c
+<h3>2.1 main.c</h3>
 A driver/example file for using the Poisson solver from your C/C++ code.
 
-2.2 poisson.cu
+<h3>2.2 poisson.cu</h3>
 The poisson solver using CUFFT. This file also has the implemation of the realFFT. Currently only square domains are supported. For performance benefits, grids of size 2^n+1 are best. In this case the FFT transform of length 2(2^n+1-1) is computed (again a power of 2) for which the FFT has the highest performance.
 
 Currently, only the grids interior is computed since zero Dirichlet boundary conditions are assumed. When writing out the grid as a text-file, zeros are padded to the boundaries. If another type of boundary condition is needed, this needs to be adjusted in the code.
 
-2.3 utils.cu
+<h3>2.3 utils.cu</h3>
 Some utilities for error checking, as well as writing out the solution to a file.
 
-2.4 precision.h
+<h3>2.4 precision.h</h3>
 Here you can specify if you want to use double precision instead of single precision GPU code. Please refer to section 1.2 for all the details.
 
 <h2>3. Additional remarks</h2>
