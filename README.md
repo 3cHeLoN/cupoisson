@@ -1,4 +1,19 @@
 <h1>cuPoisson</h1>
+CuPoisson is a GPU implementation of the 2D fast Poisson solver using CUDA. The method solves the discrete Poisson equation on a rectangular grid, assuming zero Dirichlet boundary conditions.
+
+This code is the result of a master's thesis written by Folkert Bleichrodt at Utrecht University under the supervision of Henk Dijkstra and Rob Bisseling. A scientific paper has been published, discussing the Poisson solver as part of a method for solving a 2D PDE ocean model. The paper can be downloaded at: http://dx.doi.org/10.1016/j.ocemod.2011.10.001
+
+<h3>How to acknowledge?</h3>
+If you use this code for your research, we would appreciate it if you would refer to the following paper:
+
+F. Bleichrodt, R. H. Bisseling, and H. A. Dijkstra. "Accelerating a barotropic ocean model using a GPU." Ocean Modelling, Volume 41 <http://www.sciencedirect.com/science/journal/14635003/41/supp/C>, 2012, Pages 16–21
+
+<h3>Feedback</h3>
+I would be grateful for any feedback/comments on the code, or questions regarding the documentation.
+Please sent me an email at F.Bleichrodt [a| cwi.nl
+
+<h3>Move to github/news</h3>
+As most of you probably know by now, Google code is being discontinued. I have moved the code to Github, which also should make it easier to allow pull-requests. I'm planning to update the code which now includes a Matlab interface.
 <h2>1. Running the program</h2>
 A simple driver file main.c has been provided to show how you can use cupoisson in your own C code. Currently the code is not provided as a library, since the codebase is quiet small. If a library is preferred, please contact the developer (see frontpage on google code: https://code.google.com/p/cupoisson/).
 
