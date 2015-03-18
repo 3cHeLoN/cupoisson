@@ -1,5 +1,5 @@
 <h1>cuPoisson</h1>
-1. Running the program
+<h2>1. Running the program</h2>
 A simple driver file main.c has been provided to show how you can use cupoisson in your own C code. Currently the code is not provided as a library, since the codebase is quiet small. If a library is preferred, please contact the developer (see frontpage on google code: https://code.google.com/p/cupoisson/).
 
 After compilation, go to the build folder and run
@@ -37,7 +37,7 @@ this will tell the compiler to use double in place of float.
 clean up the compilation:
 $ make clean
 3. Edit the Makefile and uncomment the line:
-#NVCCPARMS += -arch sm_13
+NVCCPARMS += -arch sm_13
 this will tell the nvcc compiler to utilize all features of devices of compute capability 1.3 (including double precision)
 4. Compile:
 $ make
@@ -51,7 +51,7 @@ If compilation fails, make sure that:
 CUDA is installed
 The CUDA library path is in your $LD_LIBRARY_PATH
 Check the include directory in CFLAGS of the makefile
-2. Source code contents
+<h2>2. Source code contents</h2>
 I will give a short description of the contents of the source code.
 
 2.1 main.c
@@ -68,7 +68,7 @@ Some utilities for error checking, as well as writing out the solution to a file
 2.4 precision.h
 Here you can specify if you want to use double precision instead of single precision GPU code. Please refer to section 1.2 for all the details.
 
-3. Additional remarks
+<h2>3. Additional remarks</h2>
 The current code is optimized to minimize data transfer from CPU to GPU to shared mem (cache). This is why there is some amount of code duplication. At certain points in the program, data is available on the shared memory of the multiprocessors. This data has to be copied to the GPU global memory. If the result must be transposed, it would not be optimal to first copy the data to global memory and then use another kernel to do the transpose operation (which will probably use shared memory again). As a result, our CUDA kernels are quiet big and have several tasks instead of only one.
 
 The main details of the algorithm are described in a research paper: http://dx.doi.org/10.1016/j.ocemod.2011.10.001
