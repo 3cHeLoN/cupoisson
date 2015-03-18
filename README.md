@@ -15,7 +15,7 @@ Please sent me an email at F.Bleichrodt [a| cwi.nl
 <h3>Move to github/news</h3>
 As most of you probably know by now, Google code is being discontinued. I have moved the code to Github, which also should make it easier to allow pull-requests. I'm planning to update the code which now includes a Matlab interface.
 <h2>1. Running the program</h2>
-A simple driver file main.c has been provided to show how you can use cupoisson in your own C code. Currently the code is not provided as a library, since the codebase is quiet small. If a library is preferred, please contact the developer (see frontpage on google code: https://code.google.com/p/cupoisson/).
+A simple driver file main.c has been provided to show how you can use cupoisson in your own C code. Currently the code is not provided as a library, since the codebase is quiet small. 
 
 After compilation, go to the build folder and run
 
