@@ -1,0 +1,35 @@
+[project]
+name = "cupoisson"
+description = "The fast Poisson solver."
+version = "0.1"
+authors = [
+    { name = "Folkert Bleichrodt" },
+]
+
+dependencies = [
+  ]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff.lint]
+extend-select = ["ANN", "B", "D", "E", "F",  "I"]
+ignore = ["ANN401"]
+pydocstyle.convention = "google"
+
+[tool.tox]
+envlist = ["py313"]
+
+[tool.tox.env.py313]
+deps = [
+    "pytest",
+    "pylint",
+    "ruff",
+]
+commands = [
+    ["pytest", "--maxfail=1"],
+    ["pylint", "src", "scripts", "tests"],
+    ["ruff", "check"],
+    ["ruff", "format", "--check"],
+]
